@@ -1,5 +1,6 @@
 ---
-title: Coffee and Bakery Menu.
+title: Coffee and Bakery Menu
+contentKey: menu
 categories:
   - name: Iced Drinks
     items:
@@ -15,7 +16,7 @@ categories:
       - name: Iced Mocha
         description: Espresso and mocha sauce, milk and ice, with whipped cream
         price: $3.49
-  - name: Hot Drinks.
+  - name: Hot Drinks
     items:
       - name: Coffee
         description: Fresh brewed Colombian coffee
