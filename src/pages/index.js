@@ -6,6 +6,7 @@ import BlogList from '../components/BlogList';
 import Layout from '../components/Layout';
 
 import styles from './index.module.css';
+import BackgroundImage from 'gatsby-background-image';
 
 export default function IndexPage() {
   const data = useStaticQuery(graphql`
@@ -18,7 +19,13 @@ export default function IndexPage() {
     markdownRemark(frontmatter: { contentKey: { eq: "indexPage" }}) {
       frontmatter {
         tagline
-        heroImage
+        heroImage {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
@@ -27,9 +34,9 @@ const tagline = data.markdownRemark.frontmatter.tagline;
 const heroImage = data.markdownRemark.frontmatter.heroImage;
   return (
     <Layout>
-      <div id={styles.hero} style={{ backgroundImage: `url(${heroImage}) `}}>
+      <BackgroundImage id={styles.hero} fluid={heroImage.childImageSharp.fluid}>
         <h1>{tagline}</h1>
-      </div>
+      </BackgroundImage>
       <BlogList />
     </Layout>
   );
