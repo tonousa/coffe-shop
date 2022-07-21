@@ -1,6 +1,6 @@
 import React from "react";
 import '../global.css';
-import Menu from '../components/menu';
+import Menu from '../components/Menu';
 
 export default function MenuPreview({ entry }) {
     const menu = entry.getIn(['data']).toJS();
